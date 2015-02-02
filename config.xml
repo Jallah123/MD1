@@ -4,7 +4,8 @@
   <author href="http://jellevanes.nl" email="jellevanes@hotmail.com">Jelle</author>
   <content src="index.html"/>
   <icon src="res/icon.png"/>
-
+  <preference name="SplashScreen" value="splashscreen" />
+  <preference name="SplashScreenDelay" value="10000" />
   <platform name="android">
     <!-- you can use any density that exists in the Android project -->
     <splash src="res/splashscreen.jpg" density="land-hdpi"/>
