@@ -8,14 +8,14 @@
   <preference name="SplashScreenDelay" value="10000" />
   <platform name="android">
     <!-- you can use any density that exists in the Android project -->
-    <splash src="res/splashscreen.jpg" density="land-hdpi"/>
-    <splash src="res/splashscreen.jpg" density="land-ldpi"/>
-    <splash src="res/splashscreen.jpg" density="land-mdpi"/>
-    <splash src="res/splashscreen.jpg" density="land-xhdpi"/>
-    <splash src="res/splashscreen.jpg" density="port-hdpi"/>
-    <splash src="res/splashscreen.jpg" density="port-ldpi"/>
-    <splash src="res/splashscreen.jpg" density="port-mdpi"/>
-    <splash src="res/splashscreen.jpg" density="port-xhdpi"/>
+    <splash src="res/splashscreen.png" density="land-hdpi"/>
+    <splash src="res/splashscreen.png" density="land-ldpi"/>
+    <splash src="res/splashscreen.png" density="land-mdpi"/>
+    <splash src="res/splashscreen.png" density="land-xhdpi"/>
+    <splash src="res/splashscreen.png" density="port-hdpi"/>
+    <splash src="res/splashscreen.png" density="port-ldpi"/>
+    <splash src="res/splashscreen.png" density="port-mdpi"/>
+    <splash src="res/splashscreen.png" density="port-xhdpi"/>
 </platform>
 
   <preference name="permissions" value="none"/>
