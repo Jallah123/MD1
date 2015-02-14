@@ -1,34 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
-    <title>Hello World</title>
-</head>
-<body>    
-    <div data-role="page">
-        <div data-role="header">
-            <h1>Films</h1>
-        </div>
-        <div role="main" class="ui-content">
+<div data-role="page" id="films" data-direction="reverse">
+    <div data-role="header">
+        <h1>Films</h1>
+    </div>
+    <div role="main" class="ui-content">
         <ul data-role="listview">
             <li><a href="#">LOTR 1</a></li>
             <li><a href="#">LOTR 2</a></li>
             <li><a href="#">LOTR 3</a></li>
         </ul>
-        </div>
-        <div data-role="footer">
-        Door mij
-        </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/jquery-mobile.js"></script> 
-    <script type="text/javascript" src="js/jquery.js"></script> 
-</body>
-</html>
+    <div data-role="footer">
+        <h4>Door mij</h4>
+    </div>
+</div>

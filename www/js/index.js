@@ -16,10 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+
+var films = [
+        ["LOTR 1", "Super vette film"],
+        ["LOTR 2", "Super vette 2de film"],
+        ["LOTR 3", "Super vette 3de film"]
+    ];    
+ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+    },
+    generateFilms: function() {
+
+        var content = "";
+
+        $.each(films, function(i, val) {
+            content += '<li><a href="#films" data-filmid=' + i + '">' + films[i][1] + '</a></li>';
+        });
+
+        $("#filmslist").append(content);
+    },
+    generateFilm: function() {
+        var content = "";
+        
     },
     // Bind Event Listeners
     //
