@@ -43,8 +43,8 @@
         <div role="main" class="ui-content">
             <ul data-role="listview">
             <li><a href="#films" data-transition="slide">Films</a></li>
-                <li><a href="#">Series</a></li>
-                <li><a href="#">Cartoons</a></li>
+                <li><a href="#series" data-transition="slide">Series</a></li>
+                <li><a href="#cartoons" data-transition="slide">Cartoons</a></li>
             </ul>
         </div>
         <div data-role="footer">
@@ -68,16 +68,69 @@
         </div>
     </div>
 
-    <div data-role="page" id="films" data-direction="reverse">
+    <div data-role="page" id="series" data-direction="reverse">
         <div data-role="header">
-            <h1></h1>
+            <h1>Series</h1>
         </div>
         <div role="main" class="ui-content">
-            <ul data-role="listview" id="filmslist">
+            <ul data-role="listview" id="serieslist">
                 <script>
-                    app.generateFilm();
+                    app.generateSeries();
                 </script>
             </ul>
+        </div>
+        <div data-role="footer">
+            <h4>Door mij</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="cartoons" data-direction="reverse">
+        <div data-role="header">
+            <h1>Cartoons</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul data-role="listview" id="cartoonslist">
+                <script>
+                    app.generateCartoons();
+                </script>
+            </ul>
+        </div>
+        <div data-role="footer">
+            <h4>Door mij</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="film" data-direction="reverse">
+        <div data-role="header">
+            <h1>Film</h1>
+        </div>
+        <div role="main" class="ui-content" id="film">      
+              <div id="content">
+              </div>
+        </div>
+        <div data-role="footer">
+            <h4>Door mij</h4>
+        </div>
+    </div>
+    <div data-role="page" id="serie" data-direction="reverse">
+        <div data-role="header">
+            <h1>Serie</h1>
+        </div>
+        <div role="main" class="ui-content" id="serie">      
+              <div id="content2">
+              </div>
+        </div>
+        <div data-role="footer">
+            <h4>Door mij</h4>
+        </div>
+    </div>
+    <div data-role="page" id="cartoon" data-direction="reverse">
+        <div data-role="header">
+            <h1>Cartoon</h1>
+        </div>
+        <div role="main" class="ui-content" id="cartoon">      
+              <div id="content3">
+              </div>
         </div>
         <div data-role="footer">
             <h4>Door mij</h4>

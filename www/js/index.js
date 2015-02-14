@@ -22,6 +22,19 @@ var films = [
         ["LOTR 2", "Super vette 2de film"],
         ["LOTR 3", "Super vette 3de film"]
     ];    
+
+var series = [
+    ["Breaking Bad", "Bad serie"],
+    ["Prison Break", "Kapotte gevangenis"],
+    ["How I met your mother", "via de hoeren"]
+];   
+
+var cartoons = [
+    ["Spongebob", "Patrick is beter"],
+    ["My little pony", "If you know what I mean"],
+    ["Winx Club", "Magische cartoon"]
+];   
+
  var app = {
     // Application Constructor
     initialize: function() {
@@ -32,14 +45,61 @@ var films = [
         var content = "";
 
         $.each(films, function(i, val) {
-            content += '<li><a href="#films" data-filmid=' + i + '">' + films[i][1] + '</a></li>';
+            content += '<li><a href="#film" onclick="app.getFilm(' + i + ')">' + films[i][0] + '</a></li>';
         });
 
         $("#filmslist").append(content);
     },
+    generateSeries: function() {
+
+        var content = "";
+
+        $.each(series, function(i, val) {
+            content += '<li><a href="#serie" onclick="app.getSerie(' + i + ')">' + series[i][0] + '</a></li>';
+        });
+
+        $("#serieslist").append(content);
+    },
+    generateCartoons: function() {
+
+        var content = "";
+
+        $.each(cartoons, function(i, val) {
+            content += '<li><a href="#cartoon" onclick="app.getCartoon(' + i + ')">' + cartoons[i][0] + '</a></li>';
+        });
+
+        $("#cartoonslist").append(content);
+    },
     generateFilm: function() {
         var content = "";
         
+    },
+    getFilm: function(id){
+        $("#content").html("");
+        var content = "";
+
+            content +=  "<p>" + films[id][0] + "</p>";
+            content +=  "<p>" + films[id][1] + "</p>";
+
+        $("#content").append(content);
+    },
+    getSerie: function(id){
+        $("#content2").html("");
+        var content = "";
+
+            content +=  "<p>" + series[id][0] + "</p>";
+            content +=  "<p>" + series[id][1] + "</p>";
+
+        $("#content2").append(content);
+    },
+    getCartoon: function(id){
+        $("#content3").html("");
+        var content = "";
+
+            content +=  "<p>" + cartoons[id][0] + "</p>";
+            content +=  "<p>" + cartoons[id][1] + "</p>";
+
+        $("#content3").append(content);
     },
     // Bind Event Listeners
     //
