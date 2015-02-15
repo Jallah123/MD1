@@ -45,7 +45,7 @@ var cartoons = [
         var content = "";
 
         $.each(films, function(i, val) {
-            content += '<li><a href="#film" onclick="app.getFilm(' + i + ')">' + films[i][0] + '</a></li>';
+            content += '<li><a href="#detailed" onclick="app.getDetailed(films, films[' + i + '][0], ' + i + ')">' + films[i][0] + '</a></li>';
         });
 
         $("#filmslist").append(content);
@@ -55,7 +55,7 @@ var cartoons = [
         var content = "";
 
         $.each(series, function(i, val) {
-            content += '<li><a href="#serie" onclick="app.getSerie(' + i + ')">' + series[i][0] + '</a></li>';
+            content += '<li><a href="#detailed" onclick="app.getDetailed(series, series[' + i + '][0], ' + i + ')">' + series[i][0] + '</a></li>';
         });
 
         $("#serieslist").append(content);
@@ -65,14 +65,26 @@ var cartoons = [
         var content = "";
 
         $.each(cartoons, function(i, val) {
-            content += '<li><a href="#cartoon" onclick="app.getCartoon(' + i + ')">' + cartoons[i][0] + '</a></li>';
+            content += '<li><a href="#detailed" onclick="app.getDetailed(cartoons, cartoons[' + i + '][0], ' + i + ')">' + cartoons[i][0] + '</a></li>';
         });
 
         $("#cartoonslist").append(content);
     },
     generateFilm: function() {
         var content = "";
-        
+    },
+    getDetailed: function(collection, name, id) {
+        console.log("getdetailed called");
+        $("#content").html("");
+        $("#title").text("");
+        $("#title").text(name);
+
+        var content = "";
+
+        content +=  "<p>" + collection[id][0] + "</p>";
+        content +=  "<p>" + collection[id][1] + "</p>";
+
+        $("#content").append(content);
     },
     getFilm: function(id){
         $("#content").html("");
