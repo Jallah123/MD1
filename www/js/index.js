@@ -40,22 +40,28 @@ var cartoons = [
     initialize: function() {
         this.bindEvents();
     },
+    addFilm: function(){
+        films.push(([$("#film_name").val(), $("#film_description").val()]));
+        $("#film_name").val("");
+        $("#film_description").val("");
+    },
     generateFilms: function() {
-
+        $("#filmslist").html("");
         var content = "";
 
         $.each(films, function(i, val) {
-            content += '<li><a href="#detailed" onclick="app.getDetailed(films, films[' + i + '][0], ' + i + ')">' + films[i][0] + '</a></li>';
+            content += '<li><a href="#detailed" onclick="app.getDetailed(films, ' + i + ')">' + films[i][0] + '</a><a class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-none" onclick="app.deleteFilm(' + i + ')"></a></li>';
         });
 
-        $("#filmslist").append(content);
+        $("#filmslist").prepend(content);
+        $("#filmslist").listview('refresh');
     },
     generateSeries: function() {
 
         var content = "";
 
         $.each(series, function(i, val) {
-            content += '<li><a href="#detailed" onclick="app.getDetailed(series, series[' + i + '][0], ' + i + ')">' + series[i][0] + '</a></li>';
+            content += '<li><a href="#detailed" onclick="app.getDetailed(series, ' + i + ')">' + series[i][0] + '</a></li>';
         });
 
         $("#serieslist").append(content);
@@ -65,7 +71,7 @@ var cartoons = [
         var content = "";
 
         $.each(cartoons, function(i, val) {
-            content += '<li><a href="#detailed" onclick="app.getDetailed(cartoons, cartoons[' + i + '][0], ' + i + ')">' + cartoons[i][0] + '</a></li>';
+            content += '<li><a href="#detailed" onclick="app.getDetailed(cartoons, ' + i + ')">' + cartoons[i][0] + '</a></li>';
         });
 
         $("#cartoonslist").append(content);
@@ -73,11 +79,15 @@ var cartoons = [
     generateFilm: function() {
         var content = "";
     },
-    getDetailed: function(collection, name, id) {
+    deleteFilm: function(id) {
+        films.splice(id, 1);
+        app.generateFilms();
+    },
+    getDetailed: function(collection, id) {
         console.log("getdetailed called");
         $("#content").html("");
         $("#title").text("");
-        $("#title").text(name);
+        $("#title").text(collection[id][0]);
 
         var content = "";
 
@@ -85,33 +95,6 @@ var cartoons = [
         content +=  "<p>" + collection[id][1] + "</p>";
 
         $("#content").append(content);
-    },
-    getFilm: function(id){
-        $("#content").html("");
-        var content = "";
-
-            content +=  "<p>" + films[id][0] + "</p>";
-            content +=  "<p>" + films[id][1] + "</p>";
-
-        $("#content").append(content);
-    },
-    getSerie: function(id){
-        $("#content2").html("");
-        var content = "";
-
-            content +=  "<p>" + series[id][0] + "</p>";
-            content +=  "<p>" + series[id][1] + "</p>";
-
-        $("#content2").append(content);
-    },
-    getCartoon: function(id){
-        $("#content3").html("");
-        var content = "";
-
-            content +=  "<p>" + cartoons[id][0] + "</p>";
-            content +=  "<p>" + cartoons[id][1] + "</p>";
-
-        $("#content3").append(content);
     },
     // Bind Event Listeners
     //

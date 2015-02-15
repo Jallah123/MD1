@@ -31,6 +31,7 @@
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/index.js"></script> 
     <script type="text/javascript" src="js/jquery.js"></script> 
+    <script type="text/javascript" src="js/endlessscroll.js"></script> 
     <script type="text/javascript" src="js/jquery-mobile.js"></script>
     <title>Hello World</title>
 </head>
@@ -42,7 +43,7 @@
         </div>
         <div role="main" class="ui-content">
             <ul data-role="listview">
-            <li><a href="#films" data-transition="slide">Films</a></li>
+                <li><a href="#films" onclick="app.generateFilms();" data-transition="slide">Films</a></li>
                 <li><a href="#series" data-transition="slide">Series</a></li>
                 <li><a href="#cartoons" data-transition="slide">Cartoons</a></li>
             </ul>
@@ -57,11 +58,24 @@
             <h1>Films</h1>
         </div>
         <div role="main" class="ui-content">
-            <ul data-role="listview" id="filmslist">
-                <script>
-                    app.generateFilms();
-                </script>
-            </ul>
+            <form>
+                <ul class="touch" data-role="listview" data-inset="true" id="filmslist">
+                </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li class="ui-field-contain">
+                    <label for="film_name">Film name:</label>
+                        <input name="film_name" id="film_name" value="" data-clear-btn="true" type="text">
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="film_description">Description:</label>
+                        <textarea cols="40" rows="8" name="film_description" id="film_description"></textarea>
+                    </li>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">Cancel</button></div>
+                        <div class="ui-block-b"><button type="submit" onclick="app.addFilm()" class="ui-btn ui-corner-all ui-btn-a">Submit</button></div>
+                    </fieldset>
+                </ul>
+            </form>
         </div>
         <div data-role="footer">
             <h4>Door mij</h4>
@@ -105,13 +119,13 @@
             <h1 id="title"></h1>
         </div>
         <div role="main" class="ui-content" id="detailedlist">      
-              <div id="content">
-              </div>
-        </div>
-        <div data-role="footer">
-            <h4>Door mij</h4>
-        </div>
+          <div id="content">
+          </div>
+      </div>
+      <div data-role="footer">
+        <h4>Door mij</h4>
     </div>
-    
+</div>
+
 </body>
 </html>
